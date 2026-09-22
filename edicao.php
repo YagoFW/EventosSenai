@@ -58,9 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
             <br>
             <br>
 
-            <label for="descricao">Inicio:</label>
+            <label for="inicio">Inicio:</label>
             <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
-
+            <br><br>
+            <label for="horarioFim">Fim:</label>
+            <input type="text" name="fim">
+                
             <br>
             <br>
         <label for="local">Local:</label>
@@ -70,21 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
             <br>
         <label for="responsavel">Responsavel:</label>
         <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
-
-
-
-            <br>
-            <br>
-
-            <label for="descricao">Responsavel:</label>
-            <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
-
-            <br>
-            <br>
-
-
-
-
+        <br><br>
             <button type="submit">Enviar</button>
 
 
