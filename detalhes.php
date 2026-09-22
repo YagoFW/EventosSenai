@@ -1,13 +1,16 @@
 <?php
 require_once("init.php");
 
+
 $eventoId = $_GET['eventoId'];
 
-$evento = $_SESSION ['eventos'][$eventoId];
+$evento = $_SESSION['eventos'][$eventoId];
+
 
 ?>
 
 <html>
+
 <body>
       <h1> Eventos Senai </h1>
 
@@ -20,4 +23,5 @@ $evento = $_SESSION ['eventos'][$eventoId];
       <p><?php echo $evento['local']; ?></p>
       <p><?php echo $evento['responsavel']; ?></p>
 
+      <p><?php require_once("nav.php"); ?></p>
 </body>
