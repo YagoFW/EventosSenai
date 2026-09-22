@@ -63,15 +63,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
 
             <br>
             <br>
-
-            <label for="descricao">Fim:</label>
-            <input type="text" id="fim" name="fim" placeholder="Coloque o Fim" required value="<?= $CodigoAtual['fim'] ?>">
+        <label for="local">Local:</label>
+        <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
 
             <br>
             <br>
+        <label for="responsavel">Responsavel:</label>
+        <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
 
-            <label for="descricao">Local:</label>
-            <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
+
 
             <br>
             <br>
