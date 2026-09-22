@@ -31,10 +31,10 @@ require_once __DIR__ . "/nav.php";
         <input type="date" name="data">
         </p>        
         <p>
-        <label for="horarioInicio">Horário de início</label>
+        <label for="inicio">Horário de início</label>
         <input type="text" name="inicio">
         </p>        
-        <label for="horarioFim">Horário de finalização:</label>
+        <label for="fim">Horário de finalização:</label>
         <input type="text" name="fim">
         </p>        
         <p>        

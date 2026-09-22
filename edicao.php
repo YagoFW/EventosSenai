@@ -61,8 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
             <label for="inicio">Inicio:</label>
             <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
             <br><br>
-            <label for="horarioFim">Fim:</label>
-            <input type="text" name="fim">
+
+            <label for="fim">Fim:</label>
+            <input type="text" id="fim" name="fim" placeholder="Coloque o fim" required value="<?= $CodigoAtual['fim'] ?>">
                 
             <br>
             <br>
