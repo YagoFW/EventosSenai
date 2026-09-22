@@ -43,37 +43,37 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])){
         <br>
         <br>
 
-        <label for="descricao">Area:</label>
+        <label for="area">Area:</label>
         <input type="text" id="area" name="area" placeholder="Coloque a Area" required value="<?= $CodigoAtual['area'] ?>">
 
         <br>
         <br>
 
-        <label for="descricao">Data:</label>
+        <label for="data">Data:</label>
         <input type="text" id="data" name="data" placeholder="Coloque a Data" required value="<?= $CodigoAtual['data'] ?>">
 
         <br>
         <br>
 
-        <label for="descricao">Inicio:</label>
+        <label for="inicio">Inicio:</label>
         <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
 
         <br>
         <br>
 
-        <label for="descricao">Fim:</label>
+        <label for="fim">Fim:</label>
         <input type="text" id="fim" name="fim" placeholder="Coloque o Fim" required value="<?= $CodigoAtual['fim'] ?>">
 
         <br>
         <br>
 
-        <label for="descricao">Local:</label>
+        <label for="local">Local:</label>
         <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
 
         <br>
         <br>
 
-        <label for="descricao">Responsavel:</label>
+        <label for="responsavel">Responsavel:</label>
         <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
 
         <br>
