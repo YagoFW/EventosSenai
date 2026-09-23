@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . "/init.php";
-require_once __DIR__ . "/nav.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +9,17 @@ require_once __DIR__ . "/nav.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Cadastro</title>
+    
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
+    <div class="titulo">
+    <h1> Formulário para cadastro de evento - EventosSenai</h1>
+    </div>
+    <div class="centerdiv">
+    <div class="form">
     <form action="processaformCadastro.php" method="POST">
         <input type="text" name="id" id="id" value="<?= $_SESSION['proximo_id'] ?>" hidden>   
        <p>
@@ -46,6 +54,11 @@ require_once __DIR__ . "/nav.php";
         <input type="text" name="responsavel">
         </p>        
         <button type="submit">Enviar</button>
-    </form> 
+    </form>
+    </div>
+    </div>
+    <div class="nav">
+    <?php require_once __DIR__ . "/nav.php" ?>
+    </div>
 </body>
 </html>
