@@ -12,25 +12,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
 
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="edicao.css">
+</head>
 
 <body>
     <h1>- Edição</h1>
+    <div class="centrelizarDiv">
     <?php require_once 'nav.php'; ?>
+    </div>
 
+    <div class="centrelizarDiv">
     <ul>
         <?php foreach ($_SESSION['eventos'] as $chaveEvento => $evento): ?>
             <li>
                 <a href="edicao.php?id=<?= $chaveEvento ?>">
                     <?= $evento['titulo'] ?>
                 </a>
+                <br>
             </li>
         <?php endforeach; ?>
     </ul>
+    </div>
 
     <?php if ($id == null): ?>
         <p>Selecione uma das noticias acima</p>
     <?php else: ?>
+        <div class="centrelizarDiv">
+        <div class="campo">
         <form action="processaFormEdicao.php" method="POST">
             <input type="text" name="id" id="id" value="<?= $id ?>" hidden>
 
@@ -58,38 +67,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
             <br>
             <br>
 
-            <label for="descricao">Inicio:</label>
+            <label for="inicio">Inicio:</label>
             <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
+            <br><br>
+
+            <label for="fim">Fim:</label>
+            <input type="text" id="fim" name="fim" placeholder="Coloque o fim" required value="<?= $CodigoAtual['fim'] ?>">
+                
+            <br>
+            <br>
+        <label for="local">Local:</label>
+        <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
 
             <br>
             <br>
-
-            <label for="descricao">Fim:</label>
-            <input type="text" id="fim" name="fim" placeholder="Coloque o Fim" required value="<?= $CodigoAtual['fim'] ?>">
-
-            <br>
-            <br>
-
-            <label for="descricao">Local:</label>
-            <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
-
-            <br>
-            <br>
-
-            <label for="descricao">Responsavel:</label>
-            <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
-
-            <br>
-            <br>
-
-
-
-
+        <label for="responsavel">Responsavel:</label>
+        <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
+        <br><br>
             <button type="submit">Enviar</button>
 
 
 
         </form>
+        </div>
+        </div>
     <?php endif ?>
 
 </body>
