@@ -7,23 +7,32 @@ if (session_status() === PHP_SESSION_NONE) {
 
 if (isset($_SESSION['eventos']) && is_array($_SESSION['eventos'])) {
     foreach ($_SESSION['eventos'] as $id => $evento) {
-        if (!isset($_SESSION['eventos'][$id]['capacidade_maxima'])) {
-            $_SESSION['eventos']['$id']['capacidade_maxima'] = 10;
+        if (!isset($_SESSION['eventos'][$id]['vagas'])) {
+            $_SESSION['eventos']['$id']['vagas'] = 10;
         }
     }
 }
 
-if (!isset($_SESSION['inscricoes'])) {
-    $_SESSION['inscricoes'] = [];
+if (!isset($_SESSION['inscritos'])) {
+    $_SESSION['inscritos'] = [];
 }
 
 function contarInscritos($id_evento) {
     $total = 0;
-    foreach ($_SESSION['inscricoes'] as $inscricao) {
+    foreach ($_SESSION['inscritos'] as $inscricao) {
         if ($inscricao['id_evento'] == $id_evento) {
             $total++;
         }
     }
     return $total;
 }
+
+
+function obterVagasDisponiveis($id_evento) {
+    $capacidade = $_SESSION['eventos'][$id_evento]['vagas'];
+    $inscritos = contarInscritos($id_evento);
+    return $capacidade - $inscritos;
+}
+
+?>
 
