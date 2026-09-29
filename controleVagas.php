@@ -17,4 +17,13 @@ if (!isset($_SESSION['inscricoes'])) {
     $_SESSION['inscricoes'] = [];
 }
 
+function contarInscritos($id_evento) {
+    $total = 0;
+    foreach ($_SESSION['inscricoes'] as $inscricao) {
+        if ($inscricao['id_evento'] == $id_evento) {
+            $total++;
+        }
+    }
+    return $total;
+}
 
