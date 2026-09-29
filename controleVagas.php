@@ -13,3 +13,8 @@ if (isset($_SESSION['eventos']) && is_array($_SESSION['eventos'])) {
     }
 }
 
+if (!isset($_SESSION['inscricoes'])) {
+    $_SESSION['inscricoes'] = [];
+}
+
+
