@@ -2,8 +2,6 @@
 
 require_once __DIR__ . "/init.php";
 require_once __DIR__ . "/nav.php";
-$eventoId=$_SESSION['eventos']['id'];
-$evento=$_SESSION['eventos'][$eventoId];
 
 ?>
 
@@ -22,15 +20,15 @@ $evento=$_SESSION['eventos'][$eventoId];
     <div class="form">
     <form action="processaInscricao.php" method="POST">
         <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome">
+        <input type="text" name="nome" id="nome" required>
         <br><br>
         <label for="email">E-mail:</label>
-        <input type="text" name="email" id="email">
+        <input type="email" name="email" id="email" required>
         <br><br>
-         <select name="<?php $chaveEvento ?>" id="eventoEscolhido" required>
+         <select name="eventoEscolhido" id="eventoEscolhido" required>
             <option value="">Selecione o evento</option>
             <?php foreach($_SESSION['eventos'] as $chaveEvento => $evento):?>
-            <option value="<?php $chaveEvento ?>"><?php $evento['titulo']; ?></option>
+            <option value="<?= htmlspecialchars($chaveEvento) ?>"><?= htmlspecialchars($evento['titulo']) ?></option>
             <?php endforeach; ?>
         </select> 
         <button type="reset">Limpar</button>
@@ -40,5 +38,3 @@ $evento=$_SESSION['eventos'][$eventoId];
     </div>
 </body>
 </html>
-
-
