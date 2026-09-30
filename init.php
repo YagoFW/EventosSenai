@@ -27,3 +27,4 @@ $_SESSION['eventos'] = [
 ];
 $_SESSION['proximo_id'] = 3;
 }
+?>
