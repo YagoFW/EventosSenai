@@ -10,8 +10,7 @@
     <a href="index.php">Home</a>
     <a href="cadastro.php">Formulário</a>
     <a href="edicao.php">Edição</a>
-    <a href="remocao.php">Deletar Noticia</a>
-    <a href="Filtrar.php">Filtrar notícia</a>
+    <a href="remocao.php">Deletar eventos</a>
     <a href="cancelar-e-reativar.php">Cancelar ou Reativar</a>
     <a href="inscricoes.php">Inscrever-se</a>
 
