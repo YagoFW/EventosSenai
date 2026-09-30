@@ -1,0 +1,41 @@
+.form{
+    border: 2px solid black;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 500px;
+    background-color:white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+
+.titulo{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+body{
+    background-color: lightgray;
+}
+
+.nav{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.centralizaForm{
+    display: flex;
+    justify-content: center;
+}
+.msg_certo{
+    color: green;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: fit-content;
+}
+.msg_erro{
+    color: firebrick;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: fit-content;
+}
