@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . "/init.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -8,10 +9,18 @@ require_once __DIR__ . "/init.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Cadastro</title>
+    
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <form method="POST">
+    <div class="titulo">
+    <h1> Formulário para cadastro de evento - EventosSenai</h1>
+    </div>
+    <div class="centerdiv">
+    <div class="form">
+    <form action="processaformCadastro.php" method="POST">
         <input type="text" name="id" id="id" value="<?= $_SESSION['proximo_id'] ?>" hidden>   
        <p>
         <label for="titulo">Título do evento:</label>
@@ -30,10 +39,10 @@ require_once __DIR__ . "/init.php";
         <input type="date" name="data">
         </p>        
         <p>
-        <label for="horarioInicio">Horário de início</label>
+        <label for="inicio">Horário de início</label>
         <input type="text" name="inicio">
         </p>        
-        <label for="horarioFim">Horário de finalização:</label>
+        <label for="fim">Horário de finalização:</label>
         <input type="text" name="fim">
         </p>        
         <p>        
@@ -44,24 +53,16 @@ require_once __DIR__ . "/init.php";
         <label for="responsavel">Responsável do evento:</label>
         <input type="text" name="responsavel">
         </p>        
+        <p>        
+        <label for="vagas">Quantidade de vagas:</label>
+        <input type="text" name="vagas">
+        </p>
         <button type="submit">Enviar</button>
     </form>
-    <?php 
-
-        require_once 'init.php';
-
-        $eventoAntes = count($_SESSION['eventos']);
-        $_SESSION['noticias'][] = $_POST;
-        $eventoDepois = count($_SESSION['eventos']);
-        print_r ($_SESSION['eventos']);
- 
-
-        if($eventoDepois> $eventoAntes){
-            header('location: index.php');
-            exit;
-        }else{
-            print 'Erro ao adicionar notícia..';
-        }
-    ?>    
+    </div>
+    </div>
+    <div class="nav">
+    <?php require_once __DIR__ . "/nav.php" ?>
+    </div>
 </body>
 </html>
