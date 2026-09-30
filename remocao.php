@@ -12,11 +12,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
 
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="style_remocao_cancelar-reativar/remocao.css">
+</head>
 
 <body>
+    <div class="titulo">
     <h1>Remover Evento</h1>
-
+    </div>
+    <div class="menu">
+            
     <ul>
         <?php foreach ($_SESSION['eventos'] as $chaveEvento => $evento): ?>
             <li>
@@ -26,10 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
             </li>
         <?php endforeach; ?>
     </ul>
+    </div>
 
     <?php if ($id == null): ?>
-        <p>Selecione uma das noticias acima</p>
     <?php else: ?>
+        <div class="centralizaCartao">
+        <div class="cartao">
 
         <form action="remocao-processa-form.php" method="POST">
             <input type="text" name="id" id="id" value="<?= $id ?>" hidden>
@@ -85,6 +92,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
             <br>
             <br>
             <button type="submit">Deletar</button>
+    </div>
+    </div>
+
+    
 
 
 
