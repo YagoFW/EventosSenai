@@ -17,11 +17,11 @@ $evento = $_SESSION['eventos'][$eventoId];
 
 <body>
       <h1> Eventos Senai </h1>
-    
+      <?php require_once('nav.php');?>
 
       
       <h3><?php echo $evento['titulo']; ?></h3>
-      <div class="informacao">
+      <div class="informcao">
       <p><?php echo $evento['descricao']; ?></p>
       <p><?php echo $evento['area']; ?></p>
       <p><?php echo $evento['data']; ?></p>
