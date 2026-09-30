@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . "/init.php";
 
+
+
 if($_SERVER['REQUEST_METHOD'] !=='POST'){
     header('Location: inscricoes.php');
 }
@@ -44,9 +46,23 @@ foreach($_SESSION['inscritos'] as $inscrito){
         
     }
 }
-if(!empty($erros)){
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processador-inscrição</title>
+
+    <link rel="stylesheet" href="inscricoes.css">
+</head>
+<body>
+    
+    <h3><?php 
+
+    if(!empty($erros)){
     foreach($erros as $erro){
-        echo "<p>" . $erro . "</p>";
+        echo '<p class="msg_erro">','Erro: ' . $erro . '</p>';
         echo '<a href="inscricoes.php">Voltar à inscrição</a>';
         exit;
     }
@@ -56,5 +72,10 @@ if(!empty($erros)){
     'email'    => $email,
     'eventoId' => $eventoId,
 ];
-echo "<p>Inscrição realizada com sucesso!</p>";
+echo '<p class="msg_certo">Inscrição realizada com sucesso!</p>';
 echo '<a href="inscricoes.php">Realizar outra inscrição</a>';
+
+    ?>
+</body>
+</html>
+
