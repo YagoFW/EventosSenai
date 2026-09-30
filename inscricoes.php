@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . "/init.php";
-require_once __DIR__ . "/nav.php";
+
 
 ?>
 
@@ -11,6 +11,8 @@ require_once __DIR__ . "/nav.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário-Inscrição</title>
+
+    <link rel="stylesheet" href="inscricoes.css">
 </head>
 <body>
     <div class="titulo">
@@ -35,6 +37,9 @@ require_once __DIR__ . "/nav.php";
         <button type="submit">Submeter</button>
     </form>
     </div>
+    </div>
+    <div class="nav">
+    <?php require_once __DIR__ . "/nav.php"; ?>
     </div>
 </body>
 </html>
