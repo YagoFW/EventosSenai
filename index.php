@@ -28,7 +28,7 @@ $busca = '';
 
     <div class="Procuraprincipal">
         <div class="navegacao">
-            <?php require_once('nav.php'); ?>
+         
         </div>
 
         <div class="digitar">
