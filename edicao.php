@@ -63,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
                     <br>
                     <br>
 
+<<<<<<< HEAD
                     <label for="inicio">Inicio:</label>
                     <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
                     <br><br>
@@ -102,6 +103,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
                     <button type="submit">Enviar</button>
             </div>
         </div>
+=======
+            <label for="inicio">Inicio:</label>
+            <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
+            <br><br>
+
+            <label for="fim">Fim:</label>
+            <input type="text" id="fim" name="fim" placeholder="Coloque o fim" required value="<?= $CodigoAtual['fim'] ?>">
+                
+            <br>
+            <br>
+        <label for="local">Local:</label>
+        <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
+
+            <br>
+            <br>
+        <label for="responsavel">Responsavel:</label>
+        <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
+        <br><br>
+            <button type="submit">Enviar</button>
+>>>>>>> main
 
 
 

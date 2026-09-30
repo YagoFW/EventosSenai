@@ -1,0 +1,18 @@
+.Titulo {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+
+body {
+    background-color: gray;
+}
+
+.digitar {
+    padding: 10px;
+}
