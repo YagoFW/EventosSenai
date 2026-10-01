@@ -5,14 +5,14 @@
     border-radius: 10px;
     text-align: center;
     width: 500px;
-<<<<<<< HEAD
+
     background-color:white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-=======
+
     background-color: 
     
     white;
->>>>>>> main
+
     
 }
 
@@ -27,11 +27,8 @@ body{
 .centerdiv{
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
 }
 .nav{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-=======
->>>>>>> main
 }
