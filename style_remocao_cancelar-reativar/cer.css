@@ -1,4 +1,4 @@
-.Titulo {
+h2{
     margin-top: 10px;
     display: flex;
     align-items: center;
@@ -8,11 +8,9 @@
     border-radius: 6px;
     background-color: whitesmoke;
 }
-
-body {
-    background-color: gray;
-}
-
-.digitar {
-    padding: 10px;
+.centralizaCartao{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    list-style-position: inside;
 }
