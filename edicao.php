@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/init.php";
+require_once __DIR__ . "/controleVagas.php";
 
 $id = null;
 $CodigoAtual = null;
@@ -18,79 +19,93 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
 
 <body>
     <h1>- Edição</h1>
-    <div class="centrelizarDiv">
     <?php require_once 'nav.php'; ?>
+    <div class="menu">
+        <ul>
+            <?php foreach ($_SESSION['eventos'] as $chaveEvento => $evento): ?>
+                <li>
+                    <a href="edicao.php?id=<?= $chaveEvento ?>">
+                        <?= $evento['titulo'] ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
     </div>
-
-    <div class="centrelizarDiv">
-    <ul>
-        <?php foreach ($_SESSION['eventos'] as $chaveEvento => $evento): ?>
-            <li>
-                <a href="edicao.php?id=<?= $chaveEvento ?>">
-                    <?= $evento['titulo'] ?>
-                </a>
-                <br>
-            </li>
-        <?php endforeach; ?>
-    </ul>
-    </div>
-
     <?php if ($id == null): ?>
         <p>Selecione uma das noticias acima</p>
     <?php else: ?>
-        <div class="centrelizarDiv">
-        <div class="campo">
-        <form action="processaFormEdicao.php" method="POST">
-            <input type="text" name="id" id="id" value="<?= $id ?>" hidden>
+        <div class="centralizaCartao">
+            <div class="cartao">
+                <form action="processaFormEdicao.php" method="POST">
+                    <input type="text" name="id" id="id" value="<?= $id ?>" hidden>
 
-            <label for="titulo">Título:</label>
-            <input type="text" id="titulo" name="titulo" placeholder="Coloque o Título" required value="<?= $CodigoAtual['titulo'] ?>">
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" name="titulo" placeholder="Coloque o Título" required value="<?= $CodigoAtual['titulo'] ?>">
 
-            <br>
-            <br>
+                    <br>
+                    <br>
 
-            <label for="descricao">Descrição:</label>
-            <input type="text" id="descricao" name="descricao" placeholder="Coloque a Descrição" required value="<?= $CodigoAtual['descricao'] ?>">
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" placeholder="Coloque a Descrição" required value="<?= $CodigoAtual['descricao'] ?>">
 
-            <br>
-            <br>
+                    <br>
+                    <br>
 
-            <label for="area">Area:</label>
-            <input type="text" id="area" name="area" placeholder="Coloque a Area" required value="<?= $CodigoAtual['area'] ?>">
+                    <label for="area">Area:</label>
+                    <input type="text" id="area" name="area" placeholder="Coloque a Area" required value="<?= $CodigoAtual['area'] ?>">
 
-            <br>
-            <br>
+                    <br>
+                    <br>
 
-            <label for="data">Data:</label>
-            <input type="text" id="data" name="data" placeholder="Coloque a Data" required value="<?= $CodigoAtual['data'] ?>">
+                    <label for="data">Data:</label>
+                    <input type="text" id="data" name="data" placeholder="Coloque a Data" required value="<?= $CodigoAtual['data'] ?>">
 
-            <br>
-            <br>
+                    <br>
+                    <br>
 
-            <label for="inicio">Inicio:</label>
-            <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
-            <br><br>
+                    <label for="inicio">Inicio:</label>
+                    <input type="text" id="inicio" name="inicio" placeholder="Coloque o Início" required value="<?= $CodigoAtual['inicio'] ?>">
+                    <br><br>
 
-            <label for="fim">Fim:</label>
-            <input type="text" id="fim" name="fim" placeholder="Coloque o fim" required value="<?= $CodigoAtual['fim'] ?>">
-                
-            <br>
-            <br>
-        <label for="local">Local:</label>
-        <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
+                    <label for="fim">Fim:</label>
+                    <input type="text" id="fim" name="fim" placeholder="Coloque o fim" required value="<?= $CodigoAtual['fim'] ?>">
 
-            <br>
-            <br>
-        <label for="responsavel">Responsavel:</label>
-        <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
-        <br><br>
-            <button type="submit">Enviar</button>
+                    <br>
+                    <br>
+                    <label for="local">Local:</label>
+                    <input type="text" id="local" name="local" placeholder="Coloque o Local" required value="<?= $CodigoAtual['local'] ?>">
+
+                    <br>
+                    <br>
+                    <label for="responsavel">Responsavel:</label>
+                    <input type="text" id="responsavel" name="responsavel" placeholder="Coloque o Local" required value="<?= $CodigoAtual['responsavel'] ?>">
+                    <br><br>
+                    <?php
+                    $inscritosAtuais = contarInscritos($id);
+                    $minimoPermitido = $inscritosAtuais > 0 ? $inscritosAtuais : 1;
+                    ?>
+
+                    <label for="vagas">Capacidade de Vagas:</label>
+                    <input
+                        type="number"
+                        id="vagas"
+                        name="vagas"
+                        value="<?= $CodigoAtual['vagas'] ?>"
+                        min="<?= $minimoPermitido ?>"
+                        step="1"
+                        required>
+
+                    <p>Inscritos atuais: <?= $inscritosAtuais ?></p>
+                    <p>Vagas disponíveis: <?= obterVagasDisponiveis($id) ?></p>
+                    <br><br>
+
+                    <button type="submit">Enviar</button>
+            </div>
+        </div>
 
 
 
         </form>
-        </div>
-        </div>
     <?php endif ?>
 
 </body>
